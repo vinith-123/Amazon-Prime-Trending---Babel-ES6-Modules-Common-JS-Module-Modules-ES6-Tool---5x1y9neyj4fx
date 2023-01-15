@@ -8,17 +8,17 @@ const App = (props) => {
 
   
   function btnHandler(event){
-    if(event.target.innerText === "← Prev"){
+    if(event.target.innerText === "Prev"){
       if(slideCount > 0){
         setSlideCount(slideCount-1);
       }
     }
-    if(event.target.innerText === "↻ Refresh"){
+    if(event.target.innerText === "Restart"){
       if(slideCount > 0){
         setSlideCount(0);
       }
     }
-    if(event.target.innerText === "Next →"){
+    if(event.target.innerText === "Next"){
       if(slideCount < props.slides.length){
         setSlideCount(slideCount+1);
       }
@@ -37,9 +37,9 @@ const App = (props) => {
         <p data-testid="text" style={{textAlign : "center"}}>{props.slides[slideCount].text}</p>
       </section>
       <section>
-        <button data-testid="button-prev" disabled={prevRefState} onClick={btnHandler}>← Prev</button>
-        <button data-testid="button-restart" disabled={prevRefState} onClick={btnHandler}>↻ Refresh</button>
-        <button data-testid="button-next" disabled={nextState} onClick={btnHandler}>Next →</button>
+        <button data-testid="button-prev" disabled={prevRefState} onClick={btnHandler}>Prev</button>
+        <button data-testid="button-restart" disabled={prevRefState} onClick={btnHandler}>Restart</button>
+        <button data-testid="button-next" disabled={nextState} onClick={btnHandler}>Next</button>
       </section>
     </div>
   )
