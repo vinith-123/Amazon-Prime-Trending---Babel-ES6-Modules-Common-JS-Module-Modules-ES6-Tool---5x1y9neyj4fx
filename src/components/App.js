@@ -3,8 +3,9 @@ import '../styles/App.css';
 
 const App = (props) => {
   const [slideCount, setSlideCount] = useState(0);
-  const [prevRefState, setPrevRefState] = useState(false);
+  const [prevRefState, setPrevRefState] = useState(true);
   const [nextState, setNextState] = useState(false);
+  const {title, text} = props.slides[slideCount];
 
   
   function btnHandler(event){
@@ -33,8 +34,8 @@ const App = (props) => {
   return (
     <div className="container" style={{textAlign : "center"}}>
       <section style={{border : "2px solid black", margin : "20px"}}>
-        <h1 data-testid="title" style={{textAlign : "center"}}>{props.slides[slideCount].title}</h1>
-        <p data-testid="text" style={{textAlign : "center"}}>{props.slides[slideCount].text}</p>
+        <h1 data-testid="title" style={{textAlign : "center"}}>{title}</h1>
+        <p data-testid="text" style={{textAlign : "center"}}>{text}</p>
       </section>
       <section>
         <button data-testid="button-prev" disabled={prevRefState} onClick={btnHandler}>Prev</button>
